@@ -2,6 +2,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
             --main-color: rgb(51, 97, 139);
             --main-color-op: rgba(51, 97, 139, 0.5);
             --main-color-op-darker: rgba(0, 0, 0, 0.9);
@@ -152,6 +153,12 @@
         max-width: 50rem;
         line-height: 1.75rem;
     }
+    @media(max-width:600px){
+        .main-page .introduction{
+            font-size: 1rem;
+        }
+    }
+       
     .main-page .introduction span a{
         font-size: .75rem;
         color: var(--main-color);
@@ -213,10 +220,10 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        gap: 2rem;
+        gap: 1.5rem;
         margin: 5rem;
     }
-        @media (max-width: 790px){
+        @media (max-width: 830px){
             .services .services-summary{
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: repeat(3, 1fr);
@@ -315,7 +322,10 @@
     }
     @media(max-width: 800px){
         .repairs ul{
-            font-size: 1.25rem;
+            font-size: 1.2rem;
+        }
+        .repairs ul li::marker{
+            font-size: 1.5rem;
         }
     }
     @media(max-width:650px){
@@ -324,19 +334,89 @@
             font-size: 1rem;
             padding: 1rem;
             width: 100vw;
-            column-gap: 1rem;
+            column-gap: 1.2rem;
         }
     }
 
 .about-us{
-    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem;
 }
+   
+        
+.about-us .about-us-info{
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    font-size: 1.5rem;
+}
+/*     @media(max-width: 1200px){
+        .about-us .about-us-info{
+            font-size: 1.2rem;
+            max-width: 30rem;
+        }  
+    } */
+    .about-us .about-us-info div p{
+        margin-left: 1rem;
+    }
+.about-us .about-us-info h3{
+    font-size: 2.5rem;
+    font-family: var(--fancy-font);
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+.about-us .about-us-content p{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+   
+}
+
+.about-us .about-us-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: calc(1.33 * 30vw);
+    background: linear-gradient(var(--main-color-op), var(--main-color-op)), url("img/babeczki.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; 
+}
+@media(max-width: 1120px){
+    .about-us{
+        flex-wrap: wrap;
+    }
+    .about-us .about-us-img{
+        width: 75vw;
+        height: calc(1.33 * 75vw);
+    }
+}
+@media(max-width: 500px){
+    .about-us .about-us-info h3{
+        font-size: 2rem;
+    }
+    .about-us .about-us-info p{
+        font-size: 1.1rem;
+    }
+}
+@media(max-width: 400px){
+    .about-us .about-us-info h3{
+        font-size: 1.7rem;
+    }
+}
+
 
 .opinions{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
+    margin: 2rem;
 }
 .opinions .opinion-single{
     width: 25rem;
@@ -350,17 +430,27 @@
     }
     .opinions .opinion-single .single-introduction{
         display: grid;
-        max-height: 7.5rem;
+        height: 7rem;
         grid-template-columns: 40% 60% ;
         grid-template-rows: repeat(3, 1fr);
         font-size: 1.5rem;
     }
     .opinions .opinion-single .single-introduction img{
+        margin: auto;
         grid-row-start: 1;
         grid-row-end: 3;
-        max-width: 6rem;
-        max-height: 6rem;
+        max-width: 5.8rem;
+        max-height: 5.8rem;
     }
+        @media(max-width: 500px){
+            .opinions .opinion-single .single-introduction img{
+                width: 5rem;
+                max-height: 5rem;
+            }
+            .opinions .opinion-single .single-introduction{
+                font-size: 1.2rem;
+            }
+        }
     .opinions .opinion-single .single-introduction h6{
         grid-column-start: 2;
     }
@@ -382,9 +472,9 @@ footer{
     gap: 5rem;
     background: linear-gradient( var(--main-color-op-darker),  var(--main-color-op-darker));
     width: 100vw;
-    height: 70vh;
     color: white;
     min-height: 25rem;
+    padding: 2rem;
 }
 @keyframes logo-moving{
     0% {
@@ -399,7 +489,7 @@ footer{
 }
     .logo{
     position: absolute;
-    opacity: 80%;
+    opacity: 60%;
     top: 25%;
     left: 25%;
     z-index: 2;
@@ -410,6 +500,12 @@ footer{
     background-size: contain;
     background-repeat: no-repeat; 
     }
+        @media(max-width: 1450px){
+            .logo{
+                z-index: -1;
+                opacity: 100%;
+            }
+        }
         .logo:hover{
         animation-name: logo-moving;
         animation-timing-function: ease-in-out;
@@ -423,7 +519,6 @@ footer{
         text-align:center;
         font-family: var(--fancy-font);
         font-size: 2.5rem;
-        
     }
 footer .contact-info{
     width: inherit;
