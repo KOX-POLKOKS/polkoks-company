@@ -224,12 +224,15 @@
         min-height: 5rem;
         padding-left: 2rem;
         cursor: pointer;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     .services .services-single a{
         font-size: 2rem;
         font-family: var(--fancy-font);
         color: var(--secondary-color);
+    }
+    .services .services-single-arrow{
+        --transform-rotate: 0deg;
     }
     .services .services-single-arrow::after{
         position: absolute;
@@ -239,8 +242,8 @@
         margin-left: -20px;
         border-left: 20px solid transparent;
         border-right: 20px solid transparent;
-        border-top: 20px solid black;
-        
+        border-top: 20px solid var(--secondary-color);
+        transform: rotate(var(--transform-rotate));
     }
     @keyframes arrow{
         0% {top: 3rem}
@@ -263,7 +266,10 @@
         padding-inline: 4.25rem;
     }
     .services .services-single-active p{
-        margin-bottom: 1rem;
+        margin-block: 1rem;
+    }
+    .services .services-single-active ul li{
+        padding-block: .25rem;
     }
     
     /* .services-hr{
@@ -378,12 +384,6 @@
 }
     .repairs ul li::marker{
         font-size: 2rem;
-    }
-    .repairs ul li:hover{
-        color: var(--secondary-color);
-    }
-    .repairs ul li:hover::marker{
-        color: var(--secondary-color);
     }
     @media(max-width: 800px){
         .repairs ul{

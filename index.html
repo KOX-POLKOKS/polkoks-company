@@ -320,19 +320,21 @@
             const Services = document.querySelectorAll(".services-single");
 
             Services.forEach(($e) =>{
-                console.log("GOWNO");
-                let servicesArrow = $e.querySelector(".services-single-hidden");
+                let servicesSingle = $e.querySelector(".services-single-hidden");
+                let servicesArrow = $e.querySelector(".services-single-arrow");
                 $e.addEventListener("click", () =>{
-                    if(servicesArrow.classList.contains("services-single-active")){
-                        servicesArrow.classList.remove("services-single-active");
-                        console.log("KURWA")
+                    if(servicesSingle.classList.contains("services-single-active")){
+                        servicesArrow.style.setProperty("--transform-rotate", "0deg");
+                        servicesSingle.classList.remove("services-single-active");
                         $e.style.height = "5rem";
-                    servicesArrow.classList.add("services-single-hidden");
+                        servicesSingle.classList.add("services-single-hidden");
+                       
                     }else{
-                        console.log("JEBANA");
-                        $e.style.height = "25rem";
-                    servicesArrow.classList.add("services-single-active");
-                    servicesArrow.classList.remove("services-single-hidden");
+                        servicesArrow.style.setProperty("--transform-rotate", "180deg");
+                        $e.style.height = "27.5rem";
+                        servicesSingle.classList.add("services-single-active");
+                        servicesSingle.classList.remove("services-single-hidden");
+                   
                     }
                     
                 })
