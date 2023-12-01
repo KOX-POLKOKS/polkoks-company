@@ -190,7 +190,7 @@
                 <a>Prace kolejowe</a>
                 <a class="services-single-arrow"></a>
                 <div class="services-single-hidden">
-                    <p>polegających na wymianie torów, podkładów oraz remontów rozjazdów a także sygnalizacji ostrzegawczej.:</p>
+                    <p>polegające na wymianie torów, podkładów oraz remontów rozjazdów a także sygnalizacji ostrzegawczej.</p>
 
             </div>
             </div>
@@ -240,11 +240,6 @@
             </div>
             <div class="services-single">
                 <a>Czyszczenie i udrażnianie rowów przydrożnych oraz kanalizacji ściekowej.</a>
-                <a class="services-single-arrow"></a>
-                <div class="services-single-hidden">
-                    <p>- pojazdami samochodowymi do 30 t.</p>
-                    <p>Wykonujemy usługi ciągnikami siodłowymi typu Renault, Volvo, Skania
-                    przeznaczonymi do przewozu różnych konstrukcji jak również, materiałów sypkich i niebezpiecznych.</p>
             </div>
             </div>
             <p class="hint">*Wszelkie prace wykonywane są przez wysokokwalifikowaną kadrę za pomocą
@@ -382,15 +377,16 @@
                 let servicesSingle = $e.querySelector(".services-single-hidden");
                 let servicesArrow = $e.querySelector(".services-single-arrow");
                 $e.addEventListener("click", () =>{
-                    if(servicesSingle.classList.contains("services-single-active")){
+                    if(servicesSingle && servicesSingle.classList.contains("services-single-active")){
                         servicesArrow.style.setProperty("--transform-rotate", "0deg");
                         servicesSingle.classList.remove("services-single-active");
-                        $e.style.height = "5rem";
+                        $e.style.minHeight = "5rem";
+                        $e.style.paddingBlock = "1rem"
                         servicesSingle.classList.add("services-single-hidden");
                        
-                    }else{
+                    }else if(servicesSingle){
                         servicesArrow.style.setProperty("--transform-rotate", "180deg");
-                        $e.style.height = "27.5rem";
+                        $e.style.minHeight = "27.5rem";
                         servicesSingle.classList.add("services-single-active");
                         servicesSingle.classList.remove("services-single-hidden");
                    
