@@ -126,6 +126,7 @@
     @media(max-width:600px){
         .main-page .introduction{
             font-size: 1rem;
+            width: 80vw;
         }
     }
        
