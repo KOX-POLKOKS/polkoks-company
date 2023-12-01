@@ -109,7 +109,34 @@
                     min-height: 3.5rem;
                 }
 
-
+    main{
+        position: relative;
+    }
+        main .malfunction{
+            z-index: 2;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            bottom: 20px;
+            right: 20px;
+            width: 9.3rem;
+            height: 3rem;
+            background-color: rgb(137, 42, 16);
+            cursor: pointer;
+            text-decoration: none;
+            transition: .2s;
+        }
+        main .malfunction:hover{
+            background-color: var(--main-color);
+        }
+        main .malfunction p{
+            border: 1px solid white;
+            padding: .5rem;
+            color: white;
+            font-family: var(--fancy-font);
+            font-weight: bold;
+        }
 
     .main-page{
         display: flex;
@@ -183,6 +210,14 @@
         gap: .75rem;
         width: 100vw;
     }
+        .services .hint{
+            color: rgb(137, 42, 16);
+            font-style: italic;
+            font-size: 1rem;
+            max-width: 50rem;
+            align-self: start;
+            margin-left: 5rem;
+        }
     .services .services-single{
         position: relative;
         display: flex;
@@ -192,7 +227,6 @@
         box-shadow: 0px 0px .25rem .25rem rgba(0, 0, 0, 0.2);
         width: 80vw;
         min-height: 5rem;
-        /* height: max-content; */
         padding-left: 2rem;
         cursor: pointer;
         font-size: 1.25rem;
