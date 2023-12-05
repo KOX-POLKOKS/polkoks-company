@@ -4,6 +4,8 @@
             box-sizing: border-box;
             scroll-behavior: smooth;
             --main-color: rgb(51, 97, 139);
+                --form-color: rgba(27,27,50, 0.9);
+                --form-heading-color: rgb(216, 225, 233);
             --main-color-op: rgba(51, 97, 139, 0.5);
             --main-color-op-darker: rgba(0, 0, 0, 0.9);
             --secondary-color: rgb(102, 104, 143);
@@ -11,6 +13,7 @@
             --header-shadow-color: rgb(190, 190, 190);
             --header-nav-color: rgb(221, 230, 239);
             --font-body: Inter;
+            --third-color: rgb(137, 42, 16);
             --fancy-font: 'Merienda';
         }
         body{
@@ -122,7 +125,7 @@
             right: 20px;
             width: 9.3rem;
             height: 3rem;
-            background-color: rgb(137, 42, 16);
+            background-color: var(--third-color);
             cursor: pointer;
             text-decoration: none;
             transition: .2s;
@@ -226,7 +229,7 @@
         align-items: baseline;
         box-shadow: 0px 0px .25rem .25rem rgba(0, 0, 0, 0.2);
         width: 80vw;
-        min-height: 4rem;
+        min-height: 5rem;
         padding-left: 2rem;
         padding-block: 1rem;
         cursor: pointer;
@@ -594,6 +597,91 @@
         grid-column-start: 2;
         font-size: 1rem;
     }
+
+            /* AWARIA */
+
+
+.flaw{
+    background-color: var(--form-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 45rem;
+    padding: 2.5rem;
+}
+
+    .flaw p{
+        color: white;
+        font-style: italic;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+    }
+#survey-form, .form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.heading{
+    font-size: 1.75rem;
+    color: var(--form-heading-color);
+    padding: 0;
+    margin: 0;
+  }
+.input-value{
+    font-family: var(--font-body);
+    font-size: 1rem;
+    height: 2rem;
+    max-width: 40rem;
+    min-width: 40rem;
+    border-radius: 5px;
+    background-color: white;
+    border: 1.5px solid black;
+  }
+  @media(max-width: 45rem){
+    .input-value{
+        min-width: 32rem;
+        max-width: 32rem; 
+    }
+}
+@media(max-width: 35rem){
+    .input-value{
+        min-width: 22rem;
+        max-width: 22rem; 
+    }
+    .heading{
+        font-size: 1.25rem;
+    }
+}
+@media(max-width: 25rem){
+    .input-value{
+        min-width: 20rem;
+        max-width: 20rem; 
+    }
+}
+
+.input-value:focus{
+    outline: none;
+    box-shadow: 0 0 0 4px 
+    green;
+  }
+#flaws{
+    height: 15rem;
+  }
+#submit{
+    background-color: green;
+    border: none;
+    color: white;
+    font-weight: bold;
+  }
+.form-clue{
+    font-size: 15px;
+    font-style: italic;
+    color: white;
+  }
+
+
 
 footer{
     position: relative;

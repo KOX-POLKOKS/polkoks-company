@@ -323,6 +323,31 @@
 
             </div>
         </section>
+        <h2 id="malfunction">Zgłoś Awarię:</h2>
+        <section class="flaw">
+            <p>Masz problem z urządzeniem? Wypełnij poniższy formularz. Pomożemy Ci!</p>
+            <form id="survey-form">
+                <div class="form-group">
+                    <label for="name" class="heading">Imię, nazwisko, FIRMA <span class="form-clue">(wymagane)</span></label>
+                    <input type="text" id="name" class="input-value" name="name" placeholder="Uzupełnij dane..." required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="heading">Adres E-mail <span class="form-clue">(wymagane)</span></label>
+                    <input type="email" id="email" class="input-value" name="email" placeholder="Uzupełnij swój e-mail..." required>
+                </div>
+                <div class="form-group">
+                    <label for="tel" class="heading">Numer telefonu <span class="form-clue">(wymagane)</span></label>
+                    <input type="text" id="tel" class="input-value" name="tel" placeholder="Uzupełnij swój nr telefonu..." required>
+                </div>
+                <div class="form-group">
+                    <label for="flaws" class="heading">Nazwa urządzenia i opis usterki <span class="form-clue">(wymagane)</span></label>
+                    <textarea id="flaws" class="input-value" name="flaws" placeholder="Opisz jak wygląda usterka..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <button id="submit" class="input-value">Wyślij</button>
+                </div>
+            </form>
+        </section>
     </main>
     <h2 id="contact">Kontakt</h2>
     <footer>
