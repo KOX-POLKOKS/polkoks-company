@@ -132,7 +132,7 @@
                 <a>Prace ślusarsko-spawalnicze</a>
                 <a class="services-single-arrow"></a>
                 <div class="services-single-hidden">
-                    <p>w ramach prowadzonej działalności wykonujemy wszelkie prace ślusarskie i spawalnicze oraz montażowe metodą spawania łukowego, elektrycznego, gazowego a także metodą MIG/MAG i TIR</p>
+                    <p>w ramach prowadzonej działalności wykonujemy wszelkie prace ślusarskie i spawalnicze oraz montażowe metodą spawania łukowego, elektrycznego, gazowego a także metodą MIG/MAG i TIG</p>
                 </div>
             </div>
             <div class="services-single">
@@ -325,26 +325,30 @@
         </section>
         <h2 id="malfunction">Zgłoś Awarię:</h2>
         <section class="flaw">
-            <p>Masz problem z urządzeniem? Wypełnij poniższy formularz. Pomożemy Ci!</p>
-            <form id="survey-form">
+            <p class="flaw-intro">Masz problem z urządzeniem? Wypełnij poniższy formularz. Pomożemy Ci!</p>
+            <form id="survey-form" method="post" action="send_email.php">
                 <div class="form-group">
                     <label for="name" class="heading">Imię, nazwisko, FIRMA <span class="form-clue">(wymagane)</span></label>
-                    <input type="text" id="name" class="input-value" name="name" placeholder="Uzupełnij dane..." required>
+                    <input type="text" id="name" class="input-value" name="name" placeholder="Uzupełnij dane...">
+                    <p class="form-error"></p>
                 </div>
                 <div class="form-group">
                     <label for="email" class="heading">Adres E-mail <span class="form-clue">(wymagane)</span></label>
-                    <input type="email" id="email" class="input-value" name="email" placeholder="Uzupełnij swój e-mail..." required>
+                    <input type="email" id="email" class="input-value" name="email" placeholder="Uzupełnij swój e-mail...">
+                    <p class="form-error"></p>
                 </div>
                 <div class="form-group">
                     <label for="tel" class="heading">Numer telefonu <span class="form-clue">(wymagane)</span></label>
-                    <input type="text" id="tel" class="input-value" name="tel" placeholder="Uzupełnij swój nr telefonu..." required>
+                    <input type="text" id="tel" class="input-value" name="tel" placeholder="Uzupełnij swój nr telefonu...">
+                    <p class="form-error"></p>
                 </div>
                 <div class="form-group">
                     <label for="flaws" class="heading">Nazwa urządzenia i opis usterki <span class="form-clue">(wymagane)</span></label>
-                    <textarea id="flaws" class="input-value" name="flaws" placeholder="Opisz jak wygląda usterka..." required></textarea>
+                    <textarea id="flaws" class="input-value" name="flaws" placeholder="Opisz jak wygląda usterka..."></textarea>
+                    <p class="form-error"></p>
                 </div>
                 <div class="form-group">
-                    <button id="submit" class="input-value">Wyślij</button>
+                    <input id="submit" class="input-value" type="submit" value="Wyślij">
                 </div>
             </form>
         </section>
@@ -372,56 +376,7 @@
             <p>&copy Polkoks Elektronics 2023. All rights reserved</p>
         </section>
     </footer>
-    <script>
-        const Navigation = document.querySelector(".banner");
-        const HiddenNav = document.querySelector(".hidden-nav");
-        
-       
-        
-
-        function checkIfVisible(){
-            let rect = Navigation.getBoundingClientRect();
-            if(rect.top <= -rect.height){            
-                HiddenNav.style.opacity = "100%";
-            
-            }else if(rect.top > -rect.height){
-            HiddenNav.style.opacity = "0%"      
-            }
-        }
-        document.addEventListener("scroll", checkIfVisible);
-        </script>
-        <script>
-          /*   function Arrow_clicked($element){
-                $element.classList.add(".services-single-active");
-                $element.classList.remove("..services-single-hidden");
-            } */
-
-            const Services = document.querySelectorAll(".services-single");
-
-            Services.forEach(($e) =>{
-                let servicesSingle = $e.querySelector(".services-single-hidden");
-                let servicesArrow = $e.querySelector(".services-single-arrow");
-                $e.addEventListener("click", () =>{
-                    if(servicesSingle && servicesSingle.classList.contains("services-single-active")){
-                        servicesArrow.style.setProperty("--transform-rotate", "0deg");
-                        servicesSingle.classList.remove("services-single-active");
-                        $e.style.minHeight = "5rem";
-                        $e.style.paddingBlock = "1rem"
-                        servicesSingle.classList.add("services-single-hidden");
-                       
-                    }else if(servicesSingle){
-                        servicesArrow.style.setProperty("--transform-rotate", "180deg");
-                        $e.style.minHeight = "27.5rem";
-                        servicesSingle.classList.add("services-single-active");
-                        servicesSingle.classList.remove("services-single-hidden");
-                   
-                    }
-                    
-                })
-            })
-
-
-        </script>
+    <script src="script.js"></script>
         <script src="https://kit.fontawesome.com/f91df08e40.js" crossorigin="anonymous"></script>
 </body>
 </html>

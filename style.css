@@ -214,7 +214,7 @@
         width: 100vw;
     }
         .services .hint{
-            color: rgb(137, 42, 16);
+            color: var(--third-color);
             font-style: italic;
             font-size: 1rem;
             max-width: 50rem;
@@ -612,7 +612,7 @@
     padding: 2.5rem;
 }
 
-    .flaw p{
+    .flaw .flaw-intro{
         color: white;
         font-style: italic;
         margin-bottom: 2rem;
@@ -632,13 +632,14 @@
 .input-value{
     font-family: var(--font-body);
     font-size: 1rem;
-    height: 2rem;
+    height: 2.2rem;
     max-width: 40rem;
     min-width: 40rem;
     border-radius: 5px;
     background-color: white;
     border: 1.5px solid black;
   }
+    
   @media(max-width: 45rem){
     .input-value{
         min-width: 32rem;
@@ -664,8 +665,16 @@
 .input-value:focus{
     outline: none;
     box-shadow: 0 0 0 4px 
-    green;
+    var(--secondary-color);
   }
+.input-value-invalid{
+    box-shadow: 0 0 0 2.5px 
+var(--third-color);
+}
+.input-value-valid{
+    box-shadow: 0 0 0 2.5px green
+}
+
 #flaws{
     height: 15rem;
   }
@@ -680,7 +689,14 @@
     font-style: italic;
     color: white;
   }
-
+  .form-error{
+    color: var(--third-color);
+    opacity: 0;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2rem;
+    align-self: start;
+}
 
 
 footer{
