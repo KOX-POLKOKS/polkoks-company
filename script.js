@@ -1,9 +1,7 @@
-    const Navigation = document.querySelector(".banner");
-        const HiddenNav = document.querySelector(".hidden-nav");
-        
-       
 /* CHECK IF VISIBLE */    
 
+const Navigation = document.querySelector(".banner");
+const HiddenNav = document.querySelector(".hidden-nav");
         function checkIfVisible(){
             let rect = Navigation.getBoundingClientRect();
             if(rect.top <= -rect.height){            
